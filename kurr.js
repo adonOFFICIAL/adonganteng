@@ -139,7 +139,7 @@ const AhmadBot = {
             tersedia: ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],
             data: {
                 email: 'shofwahromadon@gmail.com',
-                apikey: '83308c725eabdf2b6ad6c1fe04e48c1dbd4a6',
+                apikey: '613a6cf32ab14d8315578853338b751756fb3',
             }
         },
         ip: '52.175.125.152',
