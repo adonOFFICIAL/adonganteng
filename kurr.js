@@ -134,16 +134,16 @@ const AhmadBot = {
     contoh: {
         nama: 'PRIBADI ADON',
         cloudflare: {
-            listdomain: { '1': '.ressmi.com', '2': '.18xnxxk.xyz', '3': '.ilhambot.xyz', '4': '.kulgar.com', '5': '.adonganteng.com', '6': '.jepang.xyz', '7': '.iikjt.xyz', '8': '.adonhost.com', '9': '.bokep.com', '10': '.memek.xyz', '11': '.kontol.xyz', '12': '.adonstore.com', '13': '.store.com', '14': '.jepang.xyz', '15': '.xnxx.xyz', '16': '.adonpro.com',},
-            zona: { '1': '22d9bb15c38ab486f01895393c62d3dc', '2': 'ad50cd575566e66efd58f4a3252280df', '3': 'ad50cd575566e66efd58f4a3292280df', '4': 'ad50cd575566e66efd58f4a3252270df', '5': '22d9bb15c38ab486f01895393c63d3dc', '6': 'ad50cd575566e66efd58f4a3252280df', '7': 'ad50cd575566e66efd58f4a3292980df', '8': 'ad50cd575566e66efd58f4a3258270df', '9': '22d9bb15c38ab486f1895393c62d3dc', '10': 'ad50cd575566e66efd57f4a3252280df', '11': 'ad50cd575566e66efd59f4a3292280df', '12': 'ad50cd575566e66efd56f4a3252270df', '13': '22d9bb15c38ab486f00895393c63d3dc', '14': 'ad50cd575566e66efd78f4a3252280df', '15': 'ad50cd575566e66efd98f4a3292980df', '16': 'ad50cd575566e66eed58f4a3258270df', },
+            listdomain: { '1': '.ressmi.com', '2': '.18xnxxk.xyz', '3': '.simontokkkkk.gq', '4': '.kulgar.com', '5': '.adonganteng.com', '6': '.jepang.xyz', '7': '.iikjt.xyz', '8': '.adonhost.com', '9': '.bokep.com', '10': '.memek.xyz', '11': '.kontol.xyz', '12': '.adonstore.com', '13': '.store.com', '14': '.jepang.xyz', '15': '.xnxx.xyz', '16': '.adonpro.com',},
+            zona: { '1': '22d9bb15c38ab486f01895393c62d3dc', '2': 'ad50cd575566e66efd58f4a3252280df', '3': 'efa2746f4f0d0dc996c11d6346941511', '4': 'ad50cd575566e66efd58f4a3252270df', '5': '22d9bb15c38ab486f01895393c63d3dc', '6': 'ad50cd575566e66efd58f4a3252280df', '7': 'ad50cd575566e66efd58f4a3292980df', '8': 'ad50cd575566e66efd58f4a3258270df', '9': '22d9bb15c38ab486f1895393c62d3dc', '10': 'ad50cd575566e66efd57f4a3252280df', '11': 'ad50cd575566e66efd59f4a3292280df', '12': 'ad50cd575566e66efd56f4a3252270df', '13': '22d9bb15c38ab486f00895393c63d3dc', '14': 'ad50cd575566e66efd78f4a3252280df', '15': 'ad50cd575566e66efd98f4a3292980df', '16': 'ad50cd575566e66eed58f4a3258270df', },
             tersedia: ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],
             data: {
                 email: 'shofwahromadon@gmail.com',
                 apikey: '613a6cf32ab14d8315578853338b751756fb3',
             }
         },
-        ip: '52.175.125.152',
-        grup: ['120363039930834684@g.us','']
+        ip: '52.229.187.251',
+        grup: ['120363039930834684@g.us','120363022483930266@g.us']
     },
 
 //Batas
@@ -1421,72 +1421,73 @@ module.exports = kurr = async (kurr, mek) => {
         }
         switch (command) {
             //Batas OM//
-            case "package":
-        let sUser1 = "root";
-        let sPass1 = "@Hesel19Ganz";
-        let serverName1 = "login.blackparthostlive.xyz:2087/";
-
-        let uname1 = args?.join(" ")?.trim()?.split("|")?.[0]?.trim();
-        let pack1 = args?.join(" ")?.trim()?.split("|")?.[1]?.trim();
-
-        if (!uname1 || !pack1) return reply(`mana ${!uname1 && !pack1 ? "username & package" : !uname1 ? "username" : !pack1 ? "package" : ""} nya\n\nusage: .addpackage username | package`);
-
-        axios
-          .get(`https://${serverName1}/json-api/listpkgs?api.version=1`, { headers: { Authorization: "Basic " + Buffer.from(sUser1 + ":" + sPass1).toString("base64") } })
-          .then((e) => {
-            let pkgs = e.data?.data?.pkg
-              ?.map((x) => {
-                return x.name;
-              })
-              .filter((x) => {
-                return !x.includes("_") && !x.includes("default");
-              });
-            if (!pkgs.includes(pack1)) return reply(`package ${pack1} tidak ditemukan\nPackage yang tersedia:\n- ${pkgs.join("\n- ")}`);
-            axios
-              .get(`https://${serverName1}/json-api/changepackage?api.version=1&user=${encodeURIComponent(uname1)}&pkg=${encodeURIComponent(pack1)}`, { headers: { Authorization: "Basic " + Buffer.from(sUser1 + ":" + sPass1).toString("base64") } })
-              .then((e) => {
-                console.log("Upgrade user package: " + JSON.stringify(e.data?.metadata?.reason || {}, null, 2));
-                if (e.data?.metadata?.reason == "OK") {
-                  let allowedPkg = pkgs.filter((x) => {
-                    return pack1.toLowerCase().includes("mwhm") ? !x.toLowerCase().includes("mwhm") && (x.toLowerCase().includes("cpanel")||x.toLowerCase().includes("whm")) : pack1.toLowerCase().includes("whm") ? x.toLowerCase().includes("cpanel") : pack1.toLowerCase().includes("admin") ? x.toLowerCase().includes("whm") || x.toLowerCase().includes("cpanel") : pack1.toLowerCase().includes("ceo") ? !x.toLowerCase().includes("founder") && !x.toLowerCase().includes("ceo") : pack1.toLowerCase().includes("founder") ? !x.toLowerCase().includes("founder") : false;
+            case "addpackage":
+function addpackage_1(){
+  let sUser1 = "root";
+  let sPass1 = "usuwuwuw@##@#";
+  let serverName1 = "adonganteng.ressmi.com:2087/";
+  let stringify = (args) => {
+    return args instanceof Error ? JSON.stringify({ msg: args.message, error: String(args) }, null, 2) : typeof args == "object" ? JSON.stringify(args, null, 2) : String(args);
+  };
+  let  upUser = (uname1, pack1)=> {
+    axios
+    .get(`https://${serverName1}/json-api/listpkgs?api.version=1`, { headers: { Authorization: "Basic " + Buffer.from(sUser1 + ":" + sPass1).toString("base64") } })
+    .then((e) => {
+      let pkgs = e.data?.data?.pkg?.map((x) => {return x.name;}).filter((x) => {return !x.includes("_") && !x.includes("default");});
+      if (e.data?.metadata?.reason == "OK") {
+        let allowedPkg = pkgs.filter((x) => {
+          return pack1.toLowerCase().includes("mwhm") ? !x.toLowerCase().includes("mwhm") && (x.toLowerCase().includes("cpanel")||x.toLowerCase().includes("whm")) : pack1.toLowerCase().includes("whm") ? x.toLowerCase().includes("cpanel") : pack1.toLowerCase().includes("admin") ? x.toLowerCase().includes("whm") || x.toLowerCase().includes("cpanel") : pack1.toLowerCase().includes("ceo") ? !x.toLowerCase().includes("admin") && !x.toLowerCase().includes("founder") && !x.toLowerCase().includes("ceo") : pack1.toLowerCase().includes("founder") ? !x.toLowerCase().includes("founder") : false;
+        });
+        if (allowedPkg.length > 0) {
+          let param = "account_limit=15&bandwidth_limit=15000&diskspace_limit=15000&enable_account_limit=0&enable_overselling=0&enable_package_limit_numbers=0&enable_package_limits=1&enable_resource_limits=0";
+          axios.get(`https://${serverName1}/json-api/setresellerlimits?api.version=1&user=${uname1}&${param}`, { headers: { Authorization: "Basic " + Buffer.from(sUser1 + ":" + sPass1).toString("base64") } }).then(async (e) => {
+            if (e?.data?.metadata?.reason == "OK") {
+              for await (let pkg of allowedPkg) {
+                console.log(`Add package ${pkg} to ${uname1}`);
+                await axios
+                  .get(`https://${serverName1}/json-api/setresellerpackagelimit?api.version=1&user=${uname1}&allowed=1&package=${encodeURIComponent(pkg)}`, { headers: { Authorization: "Basic " + Buffer.from(sUser1 + ":" + sPass1).toString("base64") } })
+                  .then((e) => {
+                    if (e?.data?.metadata?.reason == "OK") {
+                      console.log(`add package ${pkg} to ${uname1} success`);
+                    } else {
+                      console.log({ error: `add package: ${pkg} to user: ${uname1}`, msg: JSON.stringify(e.data?.metadata?.reason || e.data?.metadata || e.data, null, 2) });
+                    }
+                  })
+                  .catch((e) => {
+                    console.log(JSON.stringify(e.response?.data || e.reason || e, null, 2));
                   });
-                  if (allowedPkg.length > 0) {
-                    let param = "account_limit=15&bandwidth_limit=15000&diskspace_limit=15000&enable_account_limit=0&enable_overselling=1&enable_overselling_bandwidth=1&enable_overselling_diskspace=1&enable_package_limit_numbers=0&enable_package_limits=1&enable_resource_limits=0";
-                    axios.get(`https://${serverName1}/json-api/setresellerlimits?api.version=1&user=${uname1}&${param}`, { headers: { Authorization: "Basic " + Buffer.from(sUser1 + ":" + sPass1).toString("base64") } }).then(async (e) => {
-                      if (e?.data?.metadata?.reason == "OK") {
-                        let pkgDone = [];
-                        for await (let pkg of allowedPkg) {
-                          console.log(`Add package ${pkg} to ${uname1}`);
-                          await axios
-                            .get(`https://${serverName1}/json-api/setresellerpackagelimit?api.version=1&user=${uname1}&allowed=1&package=${encodeURIComponent(pkg)}`, { headers: { Authorization: "Basic " + Buffer.from(sUser1 + ":" + sPass1).toString("base64") } })
-                            .then((e) => {
-                              if (e?.data?.metadata?.reason == "OK") {
-                                console.log(`add package ${pkg} to ${uname1} success`);
-                                pkgDone.push(pkg);
-                              } else {
-                                console.log({ error: `add package: ${pkg} to user: ${uname1}`, msg: JSON.stringify(e.data?.metadata?.reason || e.data?.metadata || e.data, null, 2) });
-                              }
-                            })
-                            .catch((e) => {
-                              console.log(JSON.stringify(e.response?.data || e.reason || e, null, 2));
-                            });
-                        }
-                        if (pkgDone.length > 0) reply(`add package berhasil\nlist package yang ditambah:\n- ${pkgDone.join("\n- ")}`);
-                      } else console.log(`upgrade user ${uname1} to ${pack1} failed\nError: ${JSON.stringify(e.data || e, null, 2)}`);
-                    });
-                  }
-                } else {
-                  console.log({ error: `Upgrading user plan from defaut to ${pack1}`, message: JSON.stringify(e.data?.metadata || e.data, null, 2) });
-                }
-              })
-              .catch((e) => {
-                console.log({ error: `Upgrading user plan from defaut to ${pack1}`, message: JSON.stringify(e.response?.data || e, null, 2) });
-              });
-          })
-          .catch((e) => {
-            console.log(`upgrade user package to ${pack1} failed\nreason: ${JSON.stringify(e.response?.data || e.response || e, null, 2)}`);
+              }
+              await axios.get(`https://${serverName1}/json-api/setresellerlimits?api.version=1&user=${uname1}&${param}`, { headers: { Authorization: "Basic " + Buffer.from(sUser1 + ":" + sPass1).toString("base64") } }).then(e=>{}).catch(e=>{})
+              reply(`berhasil\n\nusername: ${uname1}\npackage: ${pack1}\n\nsilahkan login`)
+            } else console.log(`upgrade user ${uname1} to ${pack1} failed\nError: ${JSON.stringify(e.data || e, null, 2)}`);
           });
-        break;      
+        }
+      } else {
+        console.log({ error: `failed Upgrading user plan from defaut to ${pack1}`, message: JSON.stringify(e.data?.metadata || e.data, null, 2) });
+      }
+    })
+    .catch((e) => {
+      console.log(`upgrade user package to ${pack1} failed\nreason: ${JSON.stringify(e.response?.data || e.response || e, null, 2)}`);
+    });
+  }
+  if(!args[0]) return reply("mana user nya")
+  axios.get(`https://${serverName1}/json-api/accountsummary?api.version=1&user=${args[0]}`, { headers: { Authorization: "Basic " + Buffer.from(sUser1 + ":" + sPass1).toString("base64") } })
+  .then(async e=>{
+    if(!e.data?.metadata?.result) {console.log(stringify(e.data)); return reply("error")}
+    else {
+      let users = e.data.data.acct
+      if(users?.length == 0) return reply("user tidak ditemukan")
+      let plan = users[0].plan
+      let user = args[0]
+      await axios.get(`https://${serverName1}/json-api/setupreseller?api.version=1&user=${user}`, { headers: { Authorization: "Basic " + Buffer.from(sUser1 + ":" + sPass1).toString("base64") } }).then(e=>{}).catch(e=>{})
+      let param = "acl-edit-account=1&acl-add-pkg=1&acl-kill-acct=1&acl-suspend-acct=1&acl-basic-system-info=1&acl-basic-whm-functions=1&acl-manage-dns-records=1&acl-edit-pkg=1&acl-stats=1&acl-manage-styles=1&acl-allow-unlimited-pkgs=1&acl-edit-dns=1&acl-cors-proxy-get=1&acl-allow-addoncreate=1&acl-cpanel-api=1&acl-generate-email-config=1&acl-upgrade-account=1&acl-ssl-gencrt=1&acl-passwd=1&acl-acct-summary=1&acl-ns-config=1&acl-allow-unlimited-disk-pkgs=1&acl-mailcheck=1&acl-allow-emaillimits-pkgs=1&acl-digest-auth=1&acl-park-dns=1&acl-list-accts=1&acl-create-user-session=1&acl-allow-parkedcreate=1&acl-show-bandwidth=1&acl-edit-mx=1&acl-limit-bandwidth=1&acl-public-contact=1&acl-create-dns=1&acl-allow-unlimited-bw-pkgs=1&acl-manage-api-tokens=1&acl-status=1&acl-kill-dns=1&acl-mysql-info=1&acl-track-email=1&acl-list-pkgs=1&acl-manage-oidc=1&acl-ssl-info=1&acl-create-acct=1&acl-cpanel-integration=1&acl-ssl=1&acl-quota=1"
+      await axios.get(`https://${serverName1}/json-api/setacls?api.version=1&reseller=${user}&${param}`, { headers: { Authorization: "Basic " + Buffer.from(sUser1 + ":" + sPass1).toString("base64") } }).then(e=>{}).catch(e=>{})
+      upUser(user, plan)
+    }
+  })
+}
+addpackage_1()
+break;
             case 'sticker':
             case 'stiker':
             case 's':
