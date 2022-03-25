@@ -128,8 +128,8 @@ const AhmadBot = {
                 apikey: '613a6cf32ab14d8315578853338b751756fb3',
             }
         },
-        ip: '20.24.72.144',
-        grup: ['120363038635911756@g.us']
+        ip: '20.210.252.124',
+        grup: ['120363040007579457@g.us']
     },
     contoh: {
         nama: 'PRIBADI ADON',
