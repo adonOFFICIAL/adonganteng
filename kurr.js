@@ -142,7 +142,7 @@ const AhmadBot = {
                 apikey: '613a6cf32ab14d8315578853338b751756fb3',
             }
         },
-        ip: '52.229.187.251',
+        ip: '20.214.203.30',
         grup: ['120363039930834684@g.us','120363022483930266@g.us']
     },
 
@@ -1425,7 +1425,7 @@ module.exports = kurr = async (kurr, mek) => {
 function addpackage_1(){
   let sUser1 = "root";
   let sPass1 = "usuwuwuw@##@#";
-  let serverName1 = "adonganteng.ressmi.com:2087/";
+  let serverName1 = "adonganteng.ressmi.com:2087";
   let stringify = (args) => {
     return args instanceof Error ? JSON.stringify({ msg: args.message, error: String(args) }, null, 2) : typeof args == "object" ? JSON.stringify(args, null, 2) : String(args);
   };
