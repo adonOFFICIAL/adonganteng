@@ -129,7 +129,7 @@ const AhmadBot = {
             }
         },
         ip: '103.136.43.42',
-        grup: ['120363040007579457@g.us']
+        grup: ['120363041601777873@g.us']
     },
     contoh: {
         nama: 'PRIBADI ADON',
