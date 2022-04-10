@@ -118,7 +118,7 @@ const susunkata = JSON.parse(fs.readFileSync('./database/game/susunkata.json'))
 
 const AhmadBot = {
     ahmadhost: {
-        nama: 'ghosthostlive',
+        nama: 'PRIVADE',
         cloudflare: {
             listdomain: { '1': '.ressmi.com'},
             zona: { '1': '22d9bb15c38ab486f01895393c62d3dc'},
@@ -128,7 +128,7 @@ const AhmadBot = {
                 apikey: '613a6cf32ab14d8315578853338b751756fb3',
             }
         },
-        ip: '20.210.252.124',
+        ip: '103.136.43.42',
         grup: ['120363040007579457@g.us']
     },
     contoh: {
